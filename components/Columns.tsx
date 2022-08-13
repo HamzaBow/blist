@@ -1,13 +1,13 @@
-import initialData from './initial-data'
+import BookCard from "./BookCard"
+import initialData from "./initial-data"
 
 const Columns = () => {
   return (
     <div>
-      {Object.keys(initialData.books).map((key: any) => (
-        <p>
-          {initialData.books[key].content}
-        </p>
-      ))}
+      {Object.keys(initialData.books).map((key: any) => {
+        const { title, subtitle, author } = initialData.books[key]
+        return <BookCard title={title} subtitle={subtitle} author={author} />
+      })}
     </div>
   )
 }

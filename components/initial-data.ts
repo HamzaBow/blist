@@ -1,19 +1,39 @@
 const initialData: any = {
   books: {
-    'book-1': { id: 'book-1', content: '12 Rules for Life' },
-    'book-2': { id: 'book-2', content: 'The 4-Hour Workweek' },
-    'book-3': { id: 'book-3', content: 'Sapiens' },
-    'book-4': { id: 'book-4', content: 'How to Avoid a Climate Disaster' },
+    "book-1": {
+      id: "book-1",
+      title: "12 Rules for Life",
+      subtitle: "An Antidote to Chaos",
+      author: "Jordan Peterson",
+    },
+    "book-2": {
+      id: "book-2",
+      title: "The 4-Hour Workweek",
+      subtitle: "Escape 9–5, Live Anywhere, and Join the New Rich",
+      author: "Timothy Ferris",
+    },
+    "book-3": {
+      id: "book-3",
+      title: "Sapiens",
+      subtitle: "A Brief History of Humankind",
+      author: "Yuval Noah Harari",
+    },
+    "book-4": {
+      id: "book-4",
+      title: "How to Avoid a Climate Disaster",
+      subtitle: "The Solutions We Have and the Breakthroughs We Need",
+      author: "Bill Gates",
+    },
   },
   columns: {
-    'column-1': {
-      id: 'column-1',
-      title: 'To do',
-      bookIds: ['book-1', 'book-2', 'book-3', 'book-4'],
+    "column-1": {
+      id: "column-1",
+      title: "To do",
+      bookIds: ["book-1", "book-2", "book-3", "book-4"],
     },
   },
   // Facilitate reordering of the columns
-  columnOrder: ['column-1'],
+  columnOrder: ["column-1"],
 };
 
 export default initialData;
