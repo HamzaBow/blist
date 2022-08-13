@@ -1,15 +1,20 @@
-import { NextPage } from 'next'
-import React from 'react'
+import { NextPage } from "next";
+import React from "react";
 interface Props {
   id: string;
   title: string;
   subtitle: string;
   author: string;
 }
-const BookCard:NextPage<Props> = ({ id, title, subtitle, author }) => {
+const BookCard: NextPage<Props> = ({ id, title, subtitle, author }) => {
   return (
     <div className="card card-side bg-base-100 shadow-xl m-4">
-      <figure><img src={`https://books.google.dz/books/content?id=${id}&printsec=frontcover&img=1&zoom=1`} alt="Album" /></figure>
+      <figure>
+        <img
+          src={`https://books.google.dz/books/content?id=${id}&printsec=frontcover&img=1&zoom=1`}
+          alt="Album"
+        />
+      </figure>
       <div className="card-body">
         <h2 className="card-title">{title}</h2>
         <p>{subtitle}</p>
@@ -18,7 +23,7 @@ const BookCard:NextPage<Props> = ({ id, title, subtitle, author }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BookCard
+export default BookCard;

@@ -1,6 +1,6 @@
 const initialData: any = {
   books: {
-    "sxVHDwAAQBAJ": {
+    sxVHDwAAQBAJ: {
       id: "sxVHDwAAQBAJ",
       title: "12 Rules for Life",
       subtitle: "An Antidote to Chaos",
@@ -12,7 +12,7 @@ const initialData: any = {
       subtitle: "Escape 9–5, Live Anywhere, and Join the New Rich",
       author: "Timothy Ferris",
     },
-    "FILmrQEACAAJ": {
+    FILmrQEACAAJ: {
       id: "FILmrQEACAAJ",
       title: "Sapiens",
       subtitle: "A Brief History of Humankind",
@@ -26,7 +26,7 @@ const initialData: any = {
     },
   },
   columns: {
-    "reading": {
+    reading: {
       id: "reading",
       title: "Currently Reading",
       bookIds: ["sxVHDwAAQBAJ", "7ayVcWQJ89YC", "FILmrQEACAAJ", "6Z6zDwAAQBAJ"],
