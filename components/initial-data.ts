@@ -1,24 +1,24 @@
 const initialData: any = {
   books: {
-    "book-1": {
+    "sxVHDwAAQBAJ": {
       id: "sxVHDwAAQBAJ",
       title: "12 Rules for Life",
       subtitle: "An Antidote to Chaos",
       author: "Jordan Peterson",
     },
-    "book-2": {
+    "7ayVcWQJ89YC": {
       id: "7ayVcWQJ89YC",
       title: "The 4-Hour Workweek",
       subtitle: "Escape 9–5, Live Anywhere, and Join the New Rich",
       author: "Timothy Ferris",
     },
-    "book-3": {
+    "FILmrQEACAAJ": {
       id: "FILmrQEACAAJ",
       title: "Sapiens",
       subtitle: "A Brief History of Humankind",
       author: "Yuval Noah Harari",
     },
-    "book-4": {
+    "6Z6zDwAAQBAJ": {
       id: "6Z6zDwAAQBAJ",
       title: "How to Avoid a Climate Disaster",
       subtitle: "The Solutions We Have and the Breakthroughs We Need",
