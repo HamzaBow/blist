@@ -26,10 +26,10 @@ const initialData: any = {
     },
   },
   columns: {
-    "column-1": {
-      id: "column-1",
-      title: "To do",
-      bookIds: ["book-1", "book-2", "book-3", "book-4"],
+    "reading": {
+      id: "reading",
+      title: "Currently Reading",
+      bookIds: ["sxVHDwAAQBAJ", "7ayVcWQJ89YC", "FILmrQEACAAJ", "6Z6zDwAAQBAJ"],
     },
   },
   // Facilitate reordering of the columns
