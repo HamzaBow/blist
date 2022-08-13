@@ -1,14 +1,10 @@
-import BookCard from "./BookCard"
+import Column from "./Column"
 import initialData from "./initial-data"
-
 const Columns = () => {
+  const readingColumn = initialData.columns.reading
+  const books = Object.keys(initialData.books).map((key:string) => initialData.books[key])
   return (
-    <div>
-      {Object.keys(initialData.books).map((key: any) => {
-        const { id, title, subtitle, author } = initialData.books[key]
-        return <BookCard id={id} title={title} subtitle={subtitle} author={author} />
-      })}
-    </div>
+    <Column key={readingColumn.id} column={readingColumn} books={books} />
   )
 }
 
