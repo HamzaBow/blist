@@ -9,6 +9,7 @@
     "daisyui": "^2.19.1",
     "next": "latest",
     "react": "18.1.0",
+    "react-beautiful-dnd": "^13.1.0",
     "react-dom": "18.1.0"
   },
   "devDependencies": {
