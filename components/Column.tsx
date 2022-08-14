@@ -10,19 +10,22 @@ interface Props {
 const Column: NextPage<Props> = ({ column, books }) => {
   return (
     <div>
-      <Droppable droppableId={column.id}>
-        {() => (
-          <div>
-            {books.map((book: any) => {
+      <Droppable key={column.id} droppableId={column.id}>
+        {(provided) => (
+          <div {...provided.droppableProps} ref={provided.innerRef}>
+            {books.map((book: any, index: number) => {
               return (
                 <BookCard
-                id={book.id}
-                title={book.title}
-                subtitle={book.subtitle}
-                author={book.author}
+                  key={book.id}
+                  id={book.id}
+                  index={index}
+                  title={book.title}
+                  subtitle={book.subtitle}
+                  author={book.author}
                 />
                 );
               })}
+            {provided.placeholder}
           </div>
           )}
       </Droppable>

@@ -33,7 +33,7 @@ const initialData: any = {
     },
   },
   // Facilitate reordering of the columns
-  columnOrder: ["column-1"],
+  columnOrder: ["reading"],
 };
 
 export default initialData;
