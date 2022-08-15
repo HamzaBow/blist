@@ -22,6 +22,7 @@ const BookCard: NextPage<Props> = ({ id, index, title, subtitle, author }) => {
             <img
               src={`https://books.google.dz/books/content?id=${id}&printsec=frontcover&img=1&zoom=1`}
               alt="Album"
+              className="w-24 h-36"
             />
           </figure>
           <div className="card-body p-4">
