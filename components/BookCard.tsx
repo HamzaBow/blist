@@ -18,7 +18,7 @@ const BookCard: NextPage<Props> = ({ id, index, title, subtitle, author }) => {
           ref={provided.innerRef}
           className="card card-side bg-base-100 shadow-xl m-4"
         >
-          <figure>
+          <figure className="w-24">
             <img
               src={`https://books.google.dz/books/content?id=${id}&printsec=frontcover&img=1&zoom=1`}
               alt="Album"
