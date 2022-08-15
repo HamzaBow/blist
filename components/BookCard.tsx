@@ -24,7 +24,7 @@ const BookCard: NextPage<Props> = ({ id, index, title, subtitle, author }) => {
               alt="Album"
             />
           </figure>
-          <div className="card-body">
+          <div className="card-body p-4">
             <h2 className="card-title">{title}</h2>
             <p>{subtitle}</p>
             <div className="card-actions justify-end">
