@@ -13,15 +13,15 @@ const Column: NextPage<Props> = ({ column, books }) => {
       <Droppable key={column.id} droppableId={column.id}>
         {(provided) => (
           <div {...provided.droppableProps} ref={provided.innerRef} className="pb-1">
-            {books.map((book: any, index: number) => {
+            {column.bookIds.map((id: any, index: number) => {
               return (
                 <BookCard
-                  key={book.id}
-                  id={book.id}
+                  key={id}
+                  id={id}
                   index={index}
-                  title={book.title}
-                  subtitle={book.subtitle}
-                  author={book.author}
+                  title={books[id].title}
+                  subtitle={books[id].subtitle}
+                  author={books[id].author}
                 />
                 );
               })}
