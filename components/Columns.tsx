@@ -10,7 +10,7 @@ const Columns = () => {
 
   }
   return (
-    <div className="bg-indigo-200">
+    <div className="bg-base-300 rounded-2xl">
       <h2 className="font-medium leading-tight text-4xl text-center py-3">{readingColumn.title}</h2>
       <DragDropContext onDragEnd={dragEndHandler}>
         <Column key={readingColumn.id} column={readingColumn} books={books} />
