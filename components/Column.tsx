@@ -12,7 +12,7 @@ const Column: NextPage<Props> = ({ column, books }) => {
     <div>
       <Droppable key={column.id} droppableId={column.id}>
         {(provided) => (
-          <div {...provided.droppableProps} ref={provided.innerRef}>
+          <div {...provided.droppableProps} ref={provided.innerRef} className="pb-1">
             {books.map((book: any, index: number) => {
               return (
                 <BookCard
