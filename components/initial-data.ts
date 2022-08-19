@@ -26,14 +26,24 @@ const initialData: any = {
     },
   },
   columns: {
+    toread: {
+      id: "toread",
+      title: "To Read",
+      bookIds: ["sxVHDwAAQBAJ", "7ayVcWQJ89YC", "FILmrQEACAAJ", "6Z6zDwAAQBAJ"],
+    },
     reading: {
       id: "reading",
       title: "Currently Reading",
-      bookIds: ["sxVHDwAAQBAJ", "7ayVcWQJ89YC", "FILmrQEACAAJ", "6Z6zDwAAQBAJ"],
+      bookIds: [],
+    },
+    finished: {
+      id: "finished",
+      title: "Finished",
+      bookIds: [],
     },
   },
   // Facilitate reordering of the columns
-  columnOrder: ["reading"],
+  columnOrder: ["toread", "reading", "finished"],
 };
 
 export default initialData;

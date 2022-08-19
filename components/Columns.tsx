@@ -34,13 +34,23 @@ const Columns = () => {
   }
 
   return (
-    <div className="bg-base-300 rounded-2xl">
-      <h2 className="font-medium leading-tight text-4xl text-center py-3">{readingColumn.title}</h2>
-      <DragDropContext onDragEnd={dragEndHandler}>
-        <Column key={readingColumn.id} column={columns["reading"]} books={initialData.books} />
-      </DragDropContext>
+    <DragDropContext onDragEnd={dragEndHandler}>
+        <div className="flex gap-4">
+        {initialData.columnOrder.map((columnId: string) => (
+          <div className="bg-base-300 rounded-2xl">
+            <h2 className="font-medium leading-tight text-4xl text-center py-3 mx-4">
+              {columns[columnId].title}
+            </h2>
+            <Column
+              key={columns[columnId].id}
+              column={columns[columnId]}
+              books={initialData.books}
+            />
+          </div>
+        ))}
     </div>
-  )
+      </DragDropContext>
+  );
 };
 
 export default Columns;
