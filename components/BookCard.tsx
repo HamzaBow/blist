@@ -11,13 +11,22 @@ interface Props {
 const BookCard: NextPage<Props> = ({ id, index, title, subtitle, author }) => {
   return (
     <Draggable key={id} draggableId={id} index={index}>
-      {(provided, snapshot) => (
-        <div
-          {...provided.dragHandleProps}
-          {...provided.draggableProps}
-          ref={provided.innerRef}
-          className={"card card-side bg-base-100 shadow-xl m-4" + (snapshot.isDragging ? " bg-emerald-500" : "")}
-        >
+      {(provided, snapshot) => {
+        let draggingColor = "";//"bg-emerald-200"
+        if (snapshot.isDragging) {
+          if (document.documentElement.dataset.theme === 'dark') {
+            draggingColor = "bg-emerald-900"
+          } else {
+            draggingColor = "bg-emerald-100"
+          }
+        }
+        return (
+          <div
+            {...provided.dragHandleProps}
+            {...provided.draggableProps}
+            ref={provided.innerRef}
+            className={`card card-side bg-base-100 shadow-xl m-4 ` + draggingColor}
+          >
           <figure className="w-24">
             <img
               src={`https://books.google.dz/books/content?id=${id}&printsec=frontcover&img=1&zoom=1`}
@@ -33,7 +42,7 @@ const BookCard: NextPage<Props> = ({ id, index, title, subtitle, author }) => {
             </div>
           </div>
         </div>
-      )}
+      )}}
     </Draggable>
   );
 };
