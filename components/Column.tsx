@@ -21,7 +21,7 @@ const Column: NextPage<Props> = ({ column, books }) => {
             }
           }
           return (
-            <div {...provided.droppableProps} ref={provided.innerRef} className={"pb-1 " + draggedOverColor}>
+            <div {...provided.droppableProps} ref={provided.innerRef} className={"py-1 " + draggedOverColor}>
               {column.bookIds.map((id: any, index: number) => {
                 return (
                   <BookCard
