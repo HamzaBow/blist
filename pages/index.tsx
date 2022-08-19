@@ -26,7 +26,7 @@ const Home: NextPage = () => {
         <div className="mb-4">
           <label className="flex gap-4">
             <span className="label-text">Dark Theme</span>
-            <input type="checkbox" checked={darkTheme}  className="checkbox" onClick={handleThemeToggle}/>
+            <input type="checkbox" checked={darkTheme}  className="toggle toggle-primary" onClick={handleThemeToggle}/>
           </label>
         </div>
         <Columns />
