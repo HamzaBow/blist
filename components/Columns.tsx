@@ -37,7 +37,7 @@ const Columns = () => {
     <DragDropContext onDragEnd={dragEndHandler}>
         <div className="flex items-start gap-4">
         {initialData.columnOrder.map((columnId: string) => (
-          <div className="bg-base-300 rounded-2xl">
+          <div className="bg-base-300 rounded-2xl w-96">
             <h2 className="font-medium leading-tight text-4xl text-center py-3 mx-4">
               {columns[columnId].title}
             </h2>
