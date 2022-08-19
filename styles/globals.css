@@ -5,3 +5,6 @@
 :root {
   font-size: 12px;
 }
+body {
+  position: absolute;
+}
