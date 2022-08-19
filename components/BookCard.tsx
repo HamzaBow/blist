@@ -12,7 +12,7 @@ const BookCard: NextPage<Props> = ({ id, index, title, subtitle, author }) => {
   return (
     <Draggable key={id} draggableId={id} index={index}>
       {(provided, snapshot) => {
-        let draggingColor = "";//"bg-emerald-200"
+        let draggingColor = "bg-base-100";
         if (snapshot.isDragging) {
           if (document.documentElement.dataset.theme === 'dark') {
             draggingColor = "bg-emerald-900"
@@ -25,7 +25,7 @@ const BookCard: NextPage<Props> = ({ id, index, title, subtitle, author }) => {
             {...provided.dragHandleProps}
             {...provided.draggableProps}
             ref={provided.innerRef}
-            className={`card card-side bg-base-100 shadow-xl m-4 ` + draggingColor}
+            className={"card card-side shadow-xl m-4 " + draggingColor}
           >
           <figure className="w-24">
             <img
