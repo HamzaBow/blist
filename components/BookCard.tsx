@@ -25,7 +25,7 @@ const BookCard: NextPage<Props> = ({ id, index, title, subtitle, author }) => {
             {...provided.dragHandleProps}
             {...provided.draggableProps}
             ref={provided.innerRef}
-            className={"card card-side shadow-xl m-4 " + draggingColor}
+            className={"card card-side shadow-xl mx-4 mb-4 " + draggingColor}
           >
           <figure className="w-24">
             <img
