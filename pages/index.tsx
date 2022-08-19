@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Columns from "../components/Columns";
 
 const Home: NextPage = () => {
-  const [darkTheme, setDarkTheme] = useState(false)
+  const [darkTheme, setDarkTheme] = useState(true)
   const handleThemeToggle = ()  => {
     setDarkTheme(prev => !prev)
   }
