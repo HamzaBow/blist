@@ -10,7 +10,7 @@ const Home: NextPage = () => {
     setDarkTheme(prev => !prev)
   }
   useEffect(() => {
-    document.documentElement.dataset.theme = darkTheme ? 'dark' : 'white'
+    document.documentElement.dataset.theme = darkTheme ? 'dark' : 'light'
   }, [darkTheme])
   const copyrightYear = `${new Date().getFullYear()}`;
   return (
