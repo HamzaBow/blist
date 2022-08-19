@@ -1,9 +1,17 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Columns from "../components/Columns";
 
 const Home: NextPage = () => {
+  const [darkTheme, setDarkTheme] = useState(false)
+  const handleThemeToggle = ()  => {
+    setDarkTheme(prev => !prev)
+  }
+  useEffect(() => {
+    document.documentElement.dataset.theme = darkTheme ? 'dark' : 'white'
+  }, [darkTheme])
   const copyrightYear = `${new Date().getFullYear()}`;
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
@@ -15,6 +23,12 @@ const Home: NextPage = () => {
         />
       </Head>
       <main>
+        <div className="mb-4">
+          <label className="flex gap-4">
+            <span className="label-text">Dark Theme</span>
+            <input type="checkbox" checked={darkTheme}  className="checkbox" onClick={handleThemeToggle}/>
+          </label>
+        </div>
         <Columns />
       </main>
 
