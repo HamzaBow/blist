@@ -11,23 +11,32 @@ const Column: NextPage<Props> = ({ column, books }) => {
   return (
     <div>
       <Droppable key={column.id} droppableId={column.id}>
-        {(provided) => (
-          <div {...provided.droppableProps} ref={provided.innerRef} className="pb-1">
-            {column.bookIds.map((id: any, index: number) => {
-              return (
-                <BookCard
-                  key={id}
-                  id={id}
-                  index={index}
-                  title={books[id].title}
-                  subtitle={books[id].subtitle}
-                  author={books[id].author}
-                />
-                );
-              })}
-            {provided.placeholder}
-          </div>
-          )}
+        {(provided, snapshot) => {
+          let draggedOverColor = "";
+          if (snapshot.isDraggingOver) {
+            if (document.documentElement.dataset.theme === 'dark') {
+              draggedOverColor = "bg-orange-900"
+            } else {
+              draggedOverColor = "bg-orange-100"
+            }
+          }
+          return (
+            <div {...provided.droppableProps} ref={provided.innerRef} className={"pb-1 " + draggedOverColor}>
+              {column.bookIds.map((id: any, index: number) => {
+                return (
+                  <BookCard
+                    key={id}
+                    id={id}
+                    index={index}
+                    title={books[id].title}
+                    subtitle={books[id].subtitle}
+                    author={books[id].author}
+                  />
+                  );
+                })}
+              {provided.placeholder}
+            </div>
+          )}}
       </Droppable>
     </div>
   );
