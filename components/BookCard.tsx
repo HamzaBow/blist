@@ -11,12 +11,12 @@ interface Props {
 const BookCard: NextPage<Props> = ({ id, index, title, subtitle, author }) => {
   return (
     <Draggable key={id} draggableId={id} index={index}>
-      {(provided) => (
+      {(provided, snapshot) => (
         <div
           {...provided.dragHandleProps}
           {...provided.draggableProps}
           ref={provided.innerRef}
-          className="card card-side bg-base-100 shadow-xl m-4"
+          className={"card card-side bg-base-100 shadow-xl m-4" + (snapshot.isDragging ? " bg-emerald-500" : "")}
         >
           <figure className="w-24">
             <img
