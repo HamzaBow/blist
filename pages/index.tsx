@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Columns from "../components/Columns";
+import SearchUI from "../components/SearchUI";
 
 const Home: NextPage = () => {
   const [darkTheme, setDarkTheme] = useState(true)
@@ -30,6 +31,9 @@ const Home: NextPage = () => {
           </label>
         </div>
         <Columns />
+        <div className="w-96 m-auto">
+          <SearchUI />
+        </div>
       </main>
 
       <footer className="flex h-24 w-full items-center justify-center border-t">
