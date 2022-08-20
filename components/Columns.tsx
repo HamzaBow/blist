@@ -21,16 +21,39 @@ const Columns = () => {
       return;
     }
 
-    const column = columns[source.droppableId];
-    const newBookIds = Array.from(column.bookIds)
-    newBookIds.splice(source.index, 1);
-    newBookIds.splice(destination.index, 0, draggableId)
+    const sourceColumn = columns[source.droppableId];
+    const destinationColumn = columns[destination.droppableId];
 
-    const newColumn = {
-      ...column,
-      bookIds: newBookIds
+    if (sourceColumn === destinationColumn) {
+      const newBookIds = Array.from(sourceColumn.bookIds)
+      newBookIds.splice(source.index, 1);
+      newBookIds.splice(destination.index, 0, draggableId)
+
+      const newColumn = {
+        ...sourceColumn,
+        bookIds: newBookIds
+      }
+      setColumns({ ...columns, [newColumn.id]: newColumn })
+    } else {
+
+      const sourceBookIds = Array.from(sourceColumn.bookIds)
+      sourceBookIds.splice(source.index, 1)
+      const newSourceColumn = {
+        ...sourceColumn,
+        bookIds: sourceBookIds
+      }
+      const destinationBookIds = Array.from(destinationColumn.bookIds)
+      destinationBookIds.splice(destination.index, 0, draggableId)
+      const newDestinationColumn = {
+        ...destinationColumn,
+        bookIds: destinationBookIds
+      }
+      setColumns({
+        ...columns,
+        [newSourceColumn.id]: newSourceColumn,
+        [newDestinationColumn.id]: newDestinationColumn,
+      });
     }
-    setColumns({ ...columns, [newColumn.id]: newColumn })
   }
 
   return (
