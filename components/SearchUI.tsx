@@ -6,7 +6,7 @@ const SearchUI = () => {
   const [searchQuery, setSearchQuery] = useState("sapiens")
 
   const handleBookSearch = async () => {
-    const res = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&langRestrict=en&maxResults=5`)
+    const res = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&langRestrict=en`)
     const data = await res.json()
     setSearchResults(data.items)
     console.log(data.items)
@@ -44,18 +44,23 @@ const SearchUI = () => {
           const subtitle = bookItem.volumeInfo.subtitle || ""
           const authors = bookItem.volumeInfo.authors || []
           return (
-          // <BookCard key={index} id={id} index={index} title={title} subtitle={subtitle} author={authors[0]} />
-          <div key={index}>
-            <div>{id}</div>
-            <div>{title}</div>
-            <div>Authors</div>
-            <ul>
-              {authors.map((author: string) => (
-                <li> - {author}</li>
-              ))}
-            </ul>
-            <hr />
-          </div>
+          <div className={"card card-side shadow-xl mx-4 mb-4 "}>
+            <figure className="w-24">
+              <img
+                src={`https://books.google.dz/books/content?id=${id}&printsec=frontcover&img=1&zoom=1`}
+                alt={`${title} Book Cover`}
+                className="w-24 h-36"
+              />
+            </figure>
+            <div className="card-body p-4">
+              <h2 className="card-title">{title}</h2>
+              <p>{subtitle}</p>
+              <div className="card-actions justify-end">
+                <span className="text-slate-500">{authors[0]}</span>
+              </div>
+            </div>
+        </div>
+
           )})}
       </div>
     </div>
