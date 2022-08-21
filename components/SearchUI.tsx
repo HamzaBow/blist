@@ -81,23 +81,14 @@ const SearchResultsDisplay:NextPage<SRDProps> = ({ searchQuery }) => {
 
 const SearchUI = () => {
   const [searchResults, setSearchResults] = useState([])
-  const [searchQuery, setSearchQuery] = useState("sapiens")
-  const [searchBtnClicked, setSearchBtnClicked] = useState(false)
-
-  const handleBookSearch = async () => {
-    // const res = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&langRestrict=en`)
-    // const data = await res.json()
-    // setSearchResults(data.items)
-    // console.log(data.items)
-    setSearchBtnClicked(true)
-  }
+  const [searchQuery, setSearchQuery] = useState("")
 
   return (
     <div className="bg-base-300 rounded-2xl px-4 pt-4 pb-1 w-[25.3rem]">
       <div className="form-control">
         <div className="input-group input-group-lg mb-4">
           <input type="text" placeholder="Search…" className="input input-bordered input-lg" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-          <button className="btn btn-square btn-lg" onClick={handleBookSearch}>
+          <button className="btn btn-square btn-lg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -115,9 +106,7 @@ const SearchUI = () => {
           </button>
         </div>
       </div>
-      { searchBtnClicked &&
-        <SearchResultsDisplay searchQuery={searchQuery} />
-      }
+      <SearchResultsDisplay searchQuery={searchQuery} />
     </div>
   );
 };
