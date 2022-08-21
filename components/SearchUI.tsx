@@ -23,9 +23,9 @@ const SearchUI = () => {
   }
 
   return (
-    <div>
+    <div className="bg-base-300 rounded-2xl px-4 pt-4 w-[25.3rem]">
       <div className="form-control">
-        <div className="input-group input-group-lg">
+        <div className="input-group input-group-lg mb-4">
           <input type="text" placeholder="Search…" className="input input-bordered input-lg" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
           <button className="btn btn-square btn-lg" onClick={handleBookSearch}>
             <svg
@@ -53,7 +53,7 @@ const SearchUI = () => {
           const subtitle = bookItem.volumeInfo.subtitle || ""
           const authors: string[] = bookItem.volumeInfo.authors || []
           return (
-          <div className={"card card-side shadow-xl mx-4 mb-4 "}>
+          <div key={index} className={"card card-side shadow-xl mx-4 mb-4 bg-base-100"}>
             <figure className="w-24">
               <img
                 src={`https://books.google.dz/books/content?id=${id}&printsec=frontcover&img=1&zoom=1`}
