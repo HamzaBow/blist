@@ -27,7 +27,7 @@ const SearchResultsDisplay:NextPage<SRDProps> = ({ searchQuery }) => {
   console.log('error :>> ', error);
 
   if (error) return <div>failed to load</div>
-  if (!data) return <div>loading...</div>
+  if (!data) return <progress className="progress progress-info w-[23.3rem]"></progress>
 
   // render data
   return (
