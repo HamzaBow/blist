@@ -11,6 +11,16 @@ const SearchUI = () => {
     setSearchResults(data.items)
     console.log(data.items)
   }
+  const stringifyAuthors = (authors: string[]) => {
+    if (authors.length === 0) {
+      return ""
+    }
+    if (authors.length === 1) {
+      return authors[0]
+    }
+    return authors.slice(0, authors.length - 1).join(", ") + " and " + authors[authors.length - 1]
+
+  }
 
   return (
     <div>
@@ -36,13 +46,12 @@ const SearchUI = () => {
         </div>
       </div>
       <div className="book-search-results">
-        <hr />
         {searchResults.map((bookItem: any, index) => {
           // const { id, title, subtitle, author } = bookItem;
           const id = bookItem.id
           const title = bookItem.volumeInfo.title
           const subtitle = bookItem.volumeInfo.subtitle || ""
-          const authors = bookItem.volumeInfo.authors || []
+          const authors: string[] = bookItem.volumeInfo.authors || []
           return (
           <div className={"card card-side shadow-xl mx-4 mb-4 "}>
             <figure className="w-24">
@@ -56,7 +65,7 @@ const SearchUI = () => {
               <h2 className="card-title">{title}</h2>
               <p>{subtitle}</p>
               <div className="card-actions justify-end">
-                <span className="text-slate-500">{authors[0]}</span>
+                <span className="text-slate-500">{stringifyAuthors(authors)}</span>
               </div>
             </div>
         </div>
