@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import BookCard from "./BookCard";
 import useSWR from "swr";
 import { NextPage } from "next";
 
