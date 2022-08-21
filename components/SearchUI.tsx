@@ -23,7 +23,7 @@ const SearchUI = () => {
   }
 
   return (
-    <div className="bg-base-300 rounded-2xl px-4 pt-4 w-[25.3rem]">
+    <div className="bg-base-300 rounded-2xl px-4 pt-4 pb-1 w-[25.3rem]">
       <div className="form-control">
         <div className="input-group input-group-lg mb-4">
           <input type="text" placeholder="Search…" className="input input-bordered input-lg" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
