@@ -45,7 +45,7 @@ const SearchResultsDisplay:NextPage<SRDProps> = ({ searchQuery }) => {
   )
   // render data
   return (
-    <div className="book-search-results">
+    <div className="book-search-results max-h-[45rem] overflow-auto">
       {/* @ts-ignore */}
       {data.items.map((bookItem: any, index) => {
         // const { id, title, subtitle, author } = bookItem;
