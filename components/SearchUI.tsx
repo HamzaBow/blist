@@ -17,6 +17,9 @@ interface SRDProps {
   searchQuery: string;
 }
 const SearchResultsDisplay:NextPage<SRDProps> = ({ searchQuery }) => {
+  if (searchQuery === "") {
+    return (<></>)
+  }
   // @ts-ignore
   const fetcher = (...args) => fetch(...args).then(res => res.json())
   const { data, error } = useSWR(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&langRestrict=en`, fetcher)
