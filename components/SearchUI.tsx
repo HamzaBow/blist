@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useSWR from "swr";
 import { NextPage } from "next";
 
@@ -81,6 +81,14 @@ const SearchResultsDisplay:NextPage<SRDProps> = ({ searchQuery }) => {
 const SearchUI = () => {
   const [searchResults, setSearchResults] = useState([])
   const [searchQuery, setSearchQuery] = useState("")
+  useEffect(() => {
+  }, [])
+  useEffect(() => {
+    document.body.style.overflow = "hidden"
+    return () => {
+    document.body.style.overflow = "auto"
+    }
+  }, [])
 
   return (
     <>
