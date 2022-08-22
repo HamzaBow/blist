@@ -79,7 +79,6 @@ const SearchResultsDisplay:NextPage<SRDProps> = ({ searchQuery }) => {
 }
 
 const SearchUI = () => {
-  const [searchResults, setSearchResults] = useState([])
   const [searchQuery, setSearchQuery] = useState("")
   useEffect(() => {
   }, [])
