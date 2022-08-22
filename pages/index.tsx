@@ -33,7 +33,6 @@ const Home: NextPage = () => {
             <input type="checkbox" defaultChecked={darkTheme} className="toggle toggle-primary" onChange={handleThemeToggle}/>
           </label>
         </div>
-        <button className="btn" onClick={() => setSearchUIShow(true)}>Search</button>
         <Columns />
         { searchUIShow &&
           <SearchUI setSearchUIShow={setSearchUIShow}/>
