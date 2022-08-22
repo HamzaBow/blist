@@ -61,7 +61,7 @@ const Columns = () => {
         <div className="flex items-start gap-4 mx-4">
         {initialData.columnOrder.map((columnId: string) => (
           <div className="bg-base-300 rounded-2xl w-96 min-h-[120px]">
-            <h2 className="font-medium leading-tight text-4xl text-center py-3 mx-4">
+            <h2 className="font-medium leading-tight text-2xl text-center py-3 mx-4">
               {columns[columnId].title}
             </h2>
             <Column
