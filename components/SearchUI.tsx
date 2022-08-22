@@ -101,8 +101,8 @@ const SearchUI:NextPage<searchUIProps> = ({ setSearchUIShow }) => {
 
   return (
     <>
-      <div className="backdrop fixed inset-0 w-screen h-screen bg-black bg-opacity-40" onClick={() => setSearchUIShow(false)}></div>
-      <div className="fixed top-16 right-1/2 translate-x-1/2 bg-base-300 rounded-2xl px-4 pt-4 pb-1 w-[25.3rem]">
+      <div className="backdrop fixed inset-0 w-screen h-screen bg-black bg-opacity-40 z-20" onClick={() => setSearchUIShow(false)}></div>
+      <div className="fixed top-16 right-1/2 translate-x-1/2 bg-base-300 rounded-2xl px-4 pt-4 pb-1 w-[25.3rem] z-30">
         <div className="form-control">
           <div className="input-group input-group-lg mb-4">
             <input type="text" placeholder="Search…" className="input input-bordered input-lg" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} autoFocus/>
