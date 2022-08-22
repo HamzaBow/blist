@@ -1,6 +1,7 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import useSWR from "swr";
 import { NextPage } from "next";
+import useEventListener from "../hooks/useEventListener";
 
 const stringifyAuthors = (authors: string[]) => {
   if (authors.length === 0) {
@@ -91,6 +92,12 @@ const SearchUI:NextPage<searchUIProps> = ({ setSearchUIShow }) => {
     document.body.style.overflow = "auto"
     }
   }, [])
+
+  useEventListener("keydown", (e: KeyboardEvent) => {
+    if (e.key === "Escape") {
+      setSearchUIShow(false)
+    }
+  })
 
   return (
     <>
