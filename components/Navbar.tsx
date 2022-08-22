@@ -1,6 +1,10 @@
-import React from "react";
+import { NextPage } from "next";
+import React, { Dispatch, SetStateAction } from "react";
 
-const Navbar = () => {
+interface Props {
+  setSearchUIShow: Dispatch<SetStateAction<boolean>>;
+}
+const Navbar:NextPage<Props> = ({ setSearchUIShow }) => {
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -41,7 +45,7 @@ const Navbar = () => {
         <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-ghost btn-circle">
+        <button className="btn btn-ghost btn-circle" onClick={() => setSearchUIShow(true)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
