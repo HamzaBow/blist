@@ -9,9 +9,6 @@ import SearchUI from "../components/SearchUI";
 const Home: NextPage = () => {
   const [darkTheme, setDarkTheme] = useState(true)
   const [searchUIShow, setSearchUIShow] = useState(false)
-  const handleThemeToggle = ()  => {
-    setDarkTheme(prev => !prev)
-  }
   useEffect(() => {
     document.documentElement.dataset.theme = darkTheme ? 'dark' : 'light'
   }, [darkTheme])
@@ -27,12 +24,6 @@ const Home: NextPage = () => {
       </Head>
       <Navbar setSearchUIShow={setSearchUIShow} darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
       <main className="mb-8">
-        <div className="mb-4">
-          <label className="flex gap-4 justify-center">
-            <span className="label-text">Dark Theme</span>
-            <input type="checkbox" defaultChecked={darkTheme} className="toggle toggle-primary" onChange={handleThemeToggle}/>
-          </label>
-        </div>
         <Columns />
         { searchUIShow &&
           <SearchUI setSearchUIShow={setSearchUIShow}/>
