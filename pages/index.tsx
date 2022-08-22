@@ -14,7 +14,7 @@ const Home: NextPage = () => {
   }, [darkTheme])
   const copyrightYear = `${new Date().getFullYear()}`;
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="">
       <Head>
         <title>Welcome to Blist</title>
         <link
