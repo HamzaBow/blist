@@ -83,30 +83,33 @@ const SearchUI = () => {
   const [searchQuery, setSearchQuery] = useState("")
 
   return (
-    <div className="bg-base-300 rounded-2xl px-4 pt-4 pb-1 w-[25.3rem]">
-      <div className="form-control">
-        <div className="input-group input-group-lg mb-4">
-          <input type="text" placeholder="Search…" className="input input-bordered input-lg" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-          <button className="btn btn-square btn-lg">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
-          </button>
+    <>
+      <div className="backdrop fixed inset-0 w-screen h-screen bg-black bg-opacity-40"></div>
+      <div className="fixed top-16 right-1/2 translate-x-1/2 bg-base-300 rounded-2xl px-4 pt-4 pb-1 w-[25.3rem]">
+        <div className="form-control">
+          <div className="input-group input-group-lg mb-4">
+            <input type="text" placeholder="Search…" className="input input-bordered input-lg" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+            <button className="btn btn-square btn-lg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
+        <SearchResultsDisplay searchQuery={searchQuery} />
       </div>
-      <SearchResultsDisplay searchQuery={searchQuery} />
-    </div>
+    </>
   );
 };
 
