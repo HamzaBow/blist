@@ -7,6 +7,7 @@ import SearchUI from "../components/SearchUI";
 
 const Home: NextPage = () => {
   const [darkTheme, setDarkTheme] = useState(true)
+  const [searchUIShow, setSearchUIShow] = useState(false)
   const handleThemeToggle = ()  => {
     setDarkTheme(prev => !prev)
   }
@@ -30,10 +31,11 @@ const Home: NextPage = () => {
             <input type="checkbox" defaultChecked={darkTheme} className="toggle toggle-primary" onChange={handleThemeToggle}/>
           </label>
         </div>
+        <button className="btn" onClick={() => setSearchUIShow(true)}>Search</button>
         <Columns />
-        <div className="w-96 m-auto">
-          <SearchUI />
-        </div>
+        { searchUIShow &&
+          <SearchUI setSearchUIShow={setSearchUIShow}/>
+        }
       </main>
 
       <footer className="flex h-24 w-full items-center justify-center border-t">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import useSWR from "swr";
 import { NextPage } from "next";
 
@@ -78,7 +78,10 @@ const SearchResultsDisplay:NextPage<SRDProps> = ({ searchQuery }) => {
   )
 }
 
-const SearchUI = () => {
+interface searchUIProps {
+  setSearchUIShow: Dispatch<SetStateAction<boolean>>
+}
+const SearchUI:NextPage<searchUIProps> = ({ setSearchUIShow }) => {
   const [searchQuery, setSearchQuery] = useState("")
   useEffect(() => {
   }, [])
@@ -91,11 +94,11 @@ const SearchUI = () => {
 
   return (
     <>
-      <div className="backdrop fixed inset-0 w-screen h-screen bg-black bg-opacity-40"></div>
+      <div className="backdrop fixed inset-0 w-screen h-screen bg-black bg-opacity-40" onClick={() => setSearchUIShow(false)}></div>
       <div className="fixed top-16 right-1/2 translate-x-1/2 bg-base-300 rounded-2xl px-4 pt-4 pb-1 w-[25.3rem]">
         <div className="form-control">
           <div className="input-group input-group-lg mb-4">
-            <input type="text" placeholder="Search…" className="input input-bordered input-lg" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+            <input type="text" placeholder="Search…" className="input input-bordered input-lg" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} autoFocus/>
             <button className="btn btn-square btn-lg">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
