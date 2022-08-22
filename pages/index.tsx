@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         />
       </Head>
       <Navbar setSearchUIShow={setSearchUIShow} darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
-      <main className="mb-8">
+      <main className="mb-8 mt-20">
         <Columns />
         { searchUIShow &&
           <SearchUI setSearchUIShow={setSearchUIShow}/>

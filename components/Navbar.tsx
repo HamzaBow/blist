@@ -8,7 +8,7 @@ interface Props {
 }
 const Navbar:NextPage<Props> = ({ setSearchUIShow, darkTheme, setDarkTheme }) => {
   return (
-    <div className="navbar bg-base-100 fixed">
+    <div className="navbar bg-base-100 fixed top-0 right-0 left-0">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
